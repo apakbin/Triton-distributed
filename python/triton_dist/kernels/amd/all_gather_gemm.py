@@ -80,7 +80,7 @@ def cp_engine_producer_all_gather_full_mesh_push_multi_stream(
                 dst_ptr,
                 src_ptr,
                 nbytes,
-                hip.hipMemcpyKind.hipMemcpyDeviceToDeviceNoCU,
+                hip.hipMemcpyKind.hipMemcpyDeviceToDevice,
                 ag_stream.cuda_stream,
             )
             HIP_CHECK(cp_res)
@@ -93,7 +93,7 @@ def cp_engine_producer_all_gather_full_mesh_push_multi_stream(
                 barrier_buffers[remote_rank].data_ptr() + chunk_pos * barrier_elem_size,
                 one.data_ptr(),
                 barrier_elem_size,
-                hip.hipMemcpyKind.hipMemcpyDeviceToDeviceNoCU,
+                hip.hipMemcpyKind.hipMemcpyDeviceToDevice,
                 ag_stream.cuda_stream,
             )
             HIP_CHECK(cp_res)

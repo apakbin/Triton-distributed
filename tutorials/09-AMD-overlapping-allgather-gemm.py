@@ -308,7 +308,7 @@ def producer_ag_push_mode(
                 dst_ptr,
                 src_ptr,
                 nbytes,
-                hip.hipMemcpyKind.hipMemcpyDeviceToDeviceNoCU,
+                hip.hipMemcpyKind.hipMemcpyDeviceToDevice,
                 ag_stream.cuda_stream,
             )
             HIP_CHECK(cp_res)
@@ -318,7 +318,7 @@ def producer_ag_push_mode(
                 chunk_pos * barrier_elem_size,
                 one.data_ptr(),
                 barrier_elem_size,
-                hip.hipMemcpyKind.hipMemcpyDeviceToDeviceNoCU,
+                hip.hipMemcpyKind.hipMemcpyDeviceToDevice,
                 ag_stream.cuda_stream,
             )
             HIP_CHECK(cp_res)

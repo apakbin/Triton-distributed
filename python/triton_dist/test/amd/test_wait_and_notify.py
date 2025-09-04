@@ -154,7 +154,7 @@ def send_and_notify(input, ag_buffers, signals):
             dst_tensor.data_ptr(),
             input.data_ptr(),
             nbytes,
-            hip.hipMemcpyKind.hipMemcpyDeviceToDeviceNoCU,
+            hip.hipMemcpyKind.hipMemcpyDeviceToDevice,
             current_stream.cuda_stream,
         )
         hip_check(call_result)

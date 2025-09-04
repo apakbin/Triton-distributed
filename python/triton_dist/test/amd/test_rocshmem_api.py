@@ -127,7 +127,7 @@ def test_rocshmem_memcpy():
                 dst_ptr,
                 src_ptr,
                 nbytes,
-                hip.hipMemcpyKind.hipMemcpyDeviceToDeviceNoCU,
+                hip.hipMemcpyKind.hipMemcpyDeviceToDevice,
                 stream.cuda_stream,
             )
 

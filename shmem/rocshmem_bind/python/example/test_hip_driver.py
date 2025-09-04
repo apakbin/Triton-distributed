@@ -67,7 +67,7 @@ def all_gather_cp_engine(src_tensor_list, signal, dst_tensor, rank, stream):
             dst_tensor[M * src_rank:M * (src_rank + 1)].data_ptr(),
             src_tensor.data_ptr(),
             nbytes,
-            hip.hipMemcpyKind.hipMemcpyDeviceToDeviceNoCU,
+            hip.hipMemcpyKind.hipMemcpyDeviceToDevice,
             stream.cuda_stream,
         )
         hip_check(call_result)
